@@ -1,0 +1,21 @@
+# 便携 Electron 运行时（约 286 MB），不进 Git；用 ./scripts/fetch-electron.sh 获取
+.runtime/
+
+# 其他本地项目 / 构建产物，不纳入本仓库
+android/
+clipbridge/
+node_modules/
+dist/
+build/
+
+# 编辑器与系统文件
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# 日志与临时文件
+*.log
+*.log.old
+*.tmp

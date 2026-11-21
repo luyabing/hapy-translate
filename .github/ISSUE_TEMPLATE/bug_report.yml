@@ -1,0 +1,58 @@
+name: Bug 报告
+description: 报告可复现的问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。提交前请先搜索现有 Issue，避免重复。
+        安全问题请勿公开提交，按 SECURITY.md 私密报告。
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 应用内「关于」显示的版本，或 commit SHA
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: 系统环境
+      description: Ubuntu 版本、桌面环境（X11/Wayland）、是否启用 AppIndicator
+      placeholder: Ubuntu 24.04, GNOME 46, XWayland
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开应用
+        2. 选择 ...
+        3. 点击 ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 如有报错，请粘贴终端输出；可附加截图
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 确认
+      options:
+        - label: 我已搜索现有 Issue
+          required: true
+        - label: 这不是第三方 AI 网站自身的问题
+          required: true

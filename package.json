@@ -1,0 +1,30 @@
+{
+  "name": "hapy-translate",
+  "productName": "Hapy翻译",
+  "version": "1.0.0",
+  "description": "Hapy翻译 - 左侧生成翻译提示词，右侧多 AI 网页工作台",
+  "main": "main.js",
+  "author": "HapyTop",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/luyabing/hapy-translate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luyabing/hapy-translate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luyabing/hapy-translate/issues"
+  },
+  "keywords": [
+    "translation",
+    "electron",
+    "ai",
+    "ubuntu",
+    "deepseek",
+    "chatgpt"
+  ],
+  "scripts": {
+    "start": "./run.sh",
+    "fetch-runtime": "./scripts/fetch-electron.sh"
+  }
+}

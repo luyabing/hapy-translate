@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https: http:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; frame-src *; child-src *;"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hapy翻译</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-sparkles" viewBox="0 0 24 24">
+        <path d="m12 3 1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7L12 3Z" />
+        <path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z" />
+        <path d="M5 14l.7 1.8 1.8.7-1.8.7L5 19l-.7-1.8-1.8-.7 1.8-.7L5 14Z" />
+      </symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24">
+        <path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 4v5h5" />
+        <path d="M4 13a8.1 8.1 0 0 0 15.5 2M20 20v-5h-5" />
+      </symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24">
+        <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3" />
+        <path d="M1 14h6M9 8h6M17 16h6" />
+      </symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" /></symbol>
+      <symbol id="i-maximize" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1" /></symbol>
+      <symbol id="i-restore" viewBox="0 0 24 24">
+        <path d="M9 5h10v10" />
+        <rect x="5" y="9" width="10" height="10" rx="1" />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" /></symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m7 9.5 5 5 5-5" /></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m20 20-4-4" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 6.8" /></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m14.5 5-7 7 7 7" /></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="m9.5 5 7 7-7 7" /></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24">
+        <path d="M14 4h6v6M20 4l-9 9" />
+        <path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" />
+      </symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24">
+        <rect x="5" y="10" width="14" height="10" rx="2" />
+        <path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2" />
+      </symbol>
+      <symbol id="i-paste" viewBox="0 0 24 24">
+        <path d="M15 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2" />
+        <rect x="9" y="3" width="6" height="4" rx="1.2" />
+        <path d="M9 12h6M9 16h4" />
+      </symbol>
+      <symbol id="i-erase" viewBox="0 0 24 24">
+        <path d="m7 20-3-3L15 6a2.8 2.8 0 0 1 4 0l1 1a2.8 2.8 0 0 1 0 4l-8 9H7Z" />
+        <path d="m11 8 5 5M9 20h11" />
+      </symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24">
+        <rect x="8" y="8" width="12" height="12" rx="2" />
+        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3.5 9h17M3.5 15h17" />
+        <path d="M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3Z" />
+      </symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24">
+        <path d="M4 7h16M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M6.5 7l1 13h9l1-13M10 11v5M14 11v5" />
+      </symbol>
+      <symbol id="i-link-off" viewBox="0 0 24 24">
+        <path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 4.8 6.4M8 12h8" />
+        <path d="M4 4l16 16" />
+      </symbol>
+      <symbol id="i-wifi-off" viewBox="0 0 24 24">
+        <path d="M3 8.5A16 16 0 0 1 9 5.7M15 5.7a16 16 0 0 1 6 2.8M6 12a11 11 0 0 1 3-1.6M15 10.4a11 11 0 0 1 3 1.6M9 15.4a6 6 0 0 1 6 0M12 19h.01M3 3l18 18" />
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 11v6M12 7h.01" />
+      </symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" /></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <header class="titlebar" id="titlebar">
+        <div class="titlebar-brand">
+          <img class="brand-icon" src="../assets/icon.png" alt="" draggable="false" />
+          <div class="brand-copy">
+            <div class="brand-name">Hapy<span>翻译</span></div>
+            <div class="brand-tagline">AI TRANSLATION DESK</div>
+          </div>
+        </div>
+
+        <div class="titlebar-drag" id="titlebarDrag">
+          <div class="titlebar-context">
+            <span class="context-pulse" id="contextPulse"></span>
+            <span class="context-site" id="contextSite">正在启动</span>
+            <span class="context-separator"></span>
+            <span class="context-label">AI 工作台</span>
+          </div>
+        </div>
+
+        <div class="titlebar-actions">
+          <button class="titlebar-action" id="refreshButton" type="button" aria-label="刷新当前页面" data-tooltip="刷新当前页面 · F5">
+            <svg class="icon"><use href="#i-refresh"></use></svg>
+          </button>
+          <button class="titlebar-action" id="settingsButton" type="button" aria-label="打开网站设置" data-tooltip="网站与预加载设置">
+            <svg class="icon"><use href="#i-settings"></use></svg>
+          </button>
+          <div class="titlebar-divider"></div>
+          <div class="window-controls">
+            <button class="window-control" id="minimizeButton" type="button" aria-label="最小化">
+              <svg class="icon"><use href="#i-minus"></use></svg>
+            </button>
+            <button class="window-control" id="maximizeButton" type="button" aria-label="最大化">
+              <svg class="icon maximize-icon"><use href="#i-maximize"></use></svg>
+              <svg class="icon restore-icon"><use href="#i-restore"></use></svg>
+            </button>
+            <button class="window-control window-close" id="closeButton" type="button" aria-label="关闭窗口（保留在系统托盘）" title="关闭窗口（保留在系统托盘）">
+              <svg class="icon"><use href="#i-close"></use></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="workspace" id="workspace">
+        <aside class="translator" id="translatorPanel">
+          <div class="translator-ambient" aria-hidden="true"></div>
+          <div class="translator-body">
+            <section class="language-section">
+              <div class="stage-label"><span>01</span>TARGET LANGUAGE</div>
+              <div class="language-row">
+                <div class="language-heading">
+                  <h1>目标语言</h1>
+                  <p>告诉 AI 你想翻译成什么</p>
+                </div>
+                <button
+                  class="language-trigger"
+                  id="languageTrigger"
+                  type="button"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                >
+                  <span class="language-code" id="languageCode">FR</span>
+                  <span class="language-current" id="languageCurrent">法语</span>
+                  <svg class="icon chevron"><use href="#i-chevron-down"></use></svg>
+                </button>
+              </div>
+            </section>
+
+            <section class="editor-section">
+              <div class="editor-heading">
+                <div class="stage-label"><span>02</span>SOURCE TEXT</div>
+                <span class="char-counter" id="charCounter">0 字符</span>
+              </div>
+              <div class="editor-shell" id="editorShell">
+                <textarea
+                  id="sourceText"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="把需要翻译的内容粘贴到这里……
+
+支持任意语言，保留原始段落与格式。"
+                  aria-label="待翻译内容"
+                ></textarea>
+                <div class="editor-badge" aria-hidden="true">
+                  <svg class="icon"><use href="#i-sparkles"></use></svg>
+                  <span>保留原文格式</span>
+                </div>
+              </div>
+            </section>
+
+            <div class="action-area">
+              <div class="action-row">
+                <button class="btn btn-secondary" id="clearButton" type="button">
+                  <svg class="icon"><use href="#i-erase"></use></svg>
+                  <span>清空</span>
+                </button>
+                <button class="btn btn-secondary" id="pasteButton" type="button">
+                  <svg class="icon"><use href="#i-paste"></use></svg>
+                  <span>粘贴</span>
+                </button>
+                <button class="btn btn-primary" id="copyPromptButton" type="button" disabled>
+                  <svg class="icon"><use href="#i-sparkles"></use></svg>
+                  <span class="btn-label">复制提示词</span>
+                  <svg class="icon btn-success-icon"><use href="#i-check"></use></svg>
+                </button>
+              </div>
+              <p class="action-hint" id="actionHint">
+                <svg class="icon"><use href="#i-info"></use></svg>
+                <span>输入内容后即可生成并复制提示词</span>
+              </p>
+            </div>
+
+            <footer class="translator-footer">
+              <span class="footer-brand">HapyTop</span>
+              <span class="footer-dot"></span>
+              <span data-app-version>v1.0.0</span>
+              <span class="footer-spacer"></span>
+              <span class="footer-motto">让表达，无界。</span>
+            </footer>
+          </div>
+
+          <div class="language-popover" id="languagePopover" hidden>
+            <div class="popover-head">
+              <div>
+                <div class="popover-eyebrow">TRANSLATE TO</div>
+                <h2>选择目标语言</h2>
+              </div>
+              <kbd>Esc</kbd>
+            </div>
+            <label class="language-search">
+              <svg class="icon"><use href="#i-search"></use></svg>
+              <input id="languageSearch" type="text" placeholder="搜索语言 / Search language" autocomplete="off" />
+            </label>
+            <div class="language-list" id="languageList" role="listbox" aria-label="目标语言"></div>
+            <div class="popover-foot">
+              <span class="popover-foot-dot"></span>
+              提示词会自动使用所选语言
+            </div>
+          </div>
+        </aside>
+
+        <div
+          class="splitter"
+          id="splitter"
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="调整翻译面板宽度"
+          tabindex="0"
+        >
+          <span></span>
+        </div>
+
+        <section class="ai-workspace">
+          <div class="site-strip">
+            <div class="site-tabs-scroller" id="siteTabsScroller">
+              <div class="site-tabs" id="siteTabs" role="tablist" aria-label="AI 网站"></div>
+            </div>
+            <div class="site-strip-end">
+              <div class="site-strip-hint">AI</div>
+              <button class="add-site-button" id="addSiteButton" type="button" aria-label="添加自定义网站" data-tooltip="添加自定义 AI 网站">
+                <svg class="icon"><use href="#i-plus"></use></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="browser-bar">
+            <div class="browser-nav">
+              <button class="browser-button" id="backButton" type="button" disabled aria-label="后退" data-tooltip="后退">
+                <svg class="icon"><use href="#i-arrow-left"></use></svg>
+              </button>
+              <button class="browser-button" id="forwardButton" type="button" disabled aria-label="前进" data-tooltip="前进">
+                <svg class="icon"><use href="#i-arrow-right"></use></svg>
+              </button>
+            </div>
+            <div class="address-chip" id="addressChip" title="当前网站">
+              <svg class="icon"><use href="#i-lock"></use></svg>
+              <span id="currentHost">等待加载网站</span>
+            </div>
+            <div class="browser-meta">
+              <span class="session-note"><span></span>登录状态已保留</span>
+              <button class="browser-button external-button" id="openExternalButton" type="button" disabled aria-label="在系统浏览器中打开" data-tooltip="在系统浏览器中打开">
+                <svg class="icon"><use href="#i-external"></use></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="browser-progress" id="browserProgress"><span></span></div>
+
+          <div class="browser-viewport" id="browserViewport">
+            <div class="webview-stage" id="webviewStage"></div>
+            <div class="no-sites" id="noSites" hidden>
+              <div class="no-sites-art" aria-hidden="true">
+                <span class="no-sites-orb orb-one"></span>
+                <span class="no-sites-orb orb-two"></span>
+                <div class="no-sites-icon"><svg class="icon"><use href="#i-globe"></use></svg></div>
+              </div>
+              <h2>还没有可用的 AI 网站</h2>
+              <p>点击右上角加号添加自定义网站，或在设置中启用内置 AI。</p>
+              <button class="btn btn-primary compact" id="emptySettingsButton" type="button">
+                <svg class="icon"><use href="#i-settings"></use></svg>
+                打开网站设置
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-layer" id="settingsModal" hidden>
+      <div class="modal-backdrop" data-close-modal="settingsModal"></div>
+      <section class="modal-card settings-card" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+        <header class="modal-header">
+          <div class="modal-mark">
+            <svg class="icon"><use href="#i-globe"></use></svg>
+          </div>
+          <div class="modal-heading">
+            <h2 id="settingsTitle">网站与预加载</h2>
+            <p>管理右侧的 AI 工作台，提前载入常用网站，切换更顺手。</p>
+          </div>
+          <button class="modal-close" id="settingsCloseButton" type="button" aria-label="关闭设置">
+            <svg class="icon"><use href="#i-close"></use></svg>
+          </button>
+        </header>
+
+        <div class="settings-toolbar">
+          <div>
+            <span class="settings-toolbar-title">AI 网站</span>
+            <span class="settings-toolbar-count" id="settingsSiteCount">8 个网站</span>
+          </div>
+          <button class="button-link" id="settingsAddButton" type="button">
+            <svg class="icon"><use href="#i-plus"></use></svg>
+            添加网站
+          </button>
+        </div>
+
+        <div class="settings-list" id="settingsSiteList"></div>
+
+        <footer class="modal-footer">
+          <div class="settings-footnote">
+            <span class="auto-save-dot"></span>
+            更改会自动保存
+            <span class="footnote-divider"></span>
+            预加载会占用更多内存
+            <span class="footnote-divider"></span>
+            关闭窗口后留在托盘
+          </div>
+          <button class="btn btn-primary compact" id="settingsDoneButton" type="button">完成</button>
+        </footer>
+      </section>
+    </div>
+
+    <div class="modal-layer" id="addSiteModal" hidden>
+      <div class="modal-backdrop" data-close-modal="addSiteModal"></div>
+      <section class="modal-card add-site-card" role="dialog" aria-modal="true" aria-labelledby="addSiteTitle">
+        <header class="modal-header">
+          <div class="modal-mark accent">
+            <svg class="icon"><use href="#i-plus"></use></svg>
+          </div>
+          <div class="modal-heading">
+            <h2 id="addSiteTitle">添加 AI 网站</h2>
+            <p>给它起个名字，粘贴网址即可。Logo 会自动获取。</p>
+          </div>
+          <button class="modal-close" id="addSiteCloseButton" type="button" aria-label="关闭">
+            <svg class="icon"><use href="#i-close"></use></svg>
+          </button>
+        </header>
+
+        <form class="add-site-form" id="addSiteForm" novalidate>
+          <div class="form-preview">
+            <div class="site-logo-preview" id="addSiteLogoPreview">
+              <span>AI</span>
+            </div>
+            <div class="form-preview-copy">
+              <strong>新的 AI 站点</strong>
+              <span>Logo 将从网站自动抓取，无需手动上传</span>
+            </div>
+          </div>
+
+          <label class="form-field">
+            <span>网站名称 <em>可选</em></span>
+            <input id="addSiteName" type="text" maxlength="30" placeholder="例如：我的 AI 助手" autocomplete="off" />
+          </label>
+
+          <label class="form-field">
+            <span>网站网址 <em>必填</em></span>
+            <input id="addSiteUrl" type="text" inputmode="url" placeholder="https://example.com/chat" autocomplete="off" required />
+          </label>
+
+          <label class="check-row">
+            <span class="custom-checkbox">
+              <input type="checkbox" id="addSitePreload" />
+              <span class="checkbox-box"><svg class="icon"><use href="#i-check"></use></svg></span>
+            </span>
+            <span class="check-copy">
+              <strong>启动时预加载这个网站</strong>
+              <small>之后切换会更快，但会占用一点内存</small>
+            </span>
+          </label>
+
+          <p class="form-error" id="addSiteError" hidden></p>
+
+          <footer class="form-actions">
+            <span class="form-note"><svg class="icon"><use href="#i-info"></use></svg>网站及登录会话仅保存在本机</span>
+            <div>
+              <button class="btn btn-secondary compact" id="addSiteCancelButton" type="button">取消</button>
+              <button class="btn btn-primary compact" id="addSiteSubmitButton" type="submit">添加网站</button>
+            </div>
+          </footer>
+        </form>
+      </section>
+    </div>
+
+    <div class="modal-layer" id="confirmModal" hidden>
+      <div class="modal-backdrop" data-close-modal="confirmModal"></div>
+      <section class="modal-card confirm-card" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <div class="confirm-icon">
+          <svg class="icon"><use href="#i-trash"></use></svg>
+        </div>
+        <h2 id="confirmTitle">已停止显示？</h2>
+        <p id="confirmText">该网站会从工作台移除，登录数据仍保存在本机。</p>
+        <div class="confirm-actions">
+          <button class="btn btn-secondary compact" id="confirmCancelButton" type="button">取消</button>
+          <button class="btn btn-danger compact" id="confirmDeleteButton" type="button">移除网站</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast-region" id="toastRegion" role="status" aria-live="polite"></div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
