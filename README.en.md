@@ -32,6 +32,24 @@ Hapy Translate puts prompt generation and multiple AI websites in one window. Pi
 
 ## Quick start
 
+### Install the .deb (recommended)
+
+Download `hapy-translate_1.0.0_amd64.deb` from [Releases](https://github.com/luyabing/hapy-translate/releases), then install:
+
+```bash
+sudo apt install ./hapy-translate_1.0.0_amd64.deb
+```
+
+The package includes the Electron runtime. Launch **Hapy Translate** from the application menu afterwards. Uninstall with:
+
+```bash
+sudo apt remove hapy-translate
+```
+
+Removing the package keeps your configuration and login data in `~/.config/hapy-translate`.
+
+The current package targets 64-bit x86 (amd64) Ubuntu / Debian. Other architectures can run from source.
+
 ### Run from source
 
 Requirements: Ubuntu 22.04+, `curl` (or `wget`), and `unzip`. Node.js is not required.
@@ -77,7 +95,8 @@ Closing the window hides it to the system tray. Use the tray menu to show/hide t
 | --- | --- |
 | Configuration (language, sites, preload, window state) | `~/.config/hapy-translate/config.json` |
 | AI site sessions and cache | `~/.config/hapy-translate/Partitions/hapy-ai/` |
-| Installed application | `~/.local/share/hapy-translate/` |
+| Installed application (.deb) | `/opt/hapy-translate/` |
+| Installed application (`install.sh`) | `~/.local/share/hapy-translate/` |
 
 - Source text is **not written to disk**.
 - AI pages run in isolated `webview` guests with Node.js integration disabled.
@@ -100,6 +119,13 @@ Closing the window hides it to the system tray. Use the tray menu to show/hide t
 
 The script checks JavaScript syntax in `main.js`, `preload.js`, and `src/renderer.js`, plus every shell script. If Node.js is not installed, it falls back to the project’s Electron runtime in Node mode.
 
+Build the .deb:
+
+```bash
+./scripts/fetch-electron.sh   # first build
+./scripts/build-deb.sh        # writes dist/hapy-translate_1.0.0_amd64.deb
+```
+
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and PR guidelines. Please report security issues privately as described in [SECURITY.md](SECURITY.md).
 
 ## Project structure
@@ -109,7 +135,7 @@ main.js               Electron main process: windows, config, sites, favicon fet
 preload.js            Whitelisted IPC bridge (window.hapy)
 src/                  Renderer: HTML, CSS, languages, editor, tabs, settings
 assets/               Icons, AI logos, screenshot
-scripts/              Electron runtime download and local syntax checks
+scripts/              Runtime download, .deb build, and local syntax checks
 run.sh                Run locally
 install.sh            Install to ~/.local/share and create a desktop entry
 uninstall.sh          Remove app files and desktop entry

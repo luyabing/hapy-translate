@@ -22,7 +22,7 @@ for file in main.js preload.js src/renderer.js; do
 done
 
 echo "检查 Shell 脚本语法…"
-for file in run.sh install.sh uninstall.sh scripts/fetch-electron.sh scripts/check.sh; do
+for file in run.sh install.sh uninstall.sh scripts/fetch-electron.sh scripts/build-deb.sh scripts/check.sh; do
   bash -n "$file"
   echo "  ✓ $file"
 done

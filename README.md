@@ -41,6 +41,24 @@ Hapy翻译把「生成翻译提示词」和「多 AI 网页」放进同一个窗
 
 ## 快速开始
 
+### 下载安装包（推荐）
+
+前往 [Releases](https://github.com/luyabing/hapy-translate/releases) 下载 `hapy-translate_1.0.0_amd64.deb`，然后安装：
+
+```bash
+sudo apt install ./hapy-translate_1.0.0_amd64.deb
+```
+
+安装包已包含 Electron 运行时，安装后从应用菜单启动「Hapy翻译」即可。卸载：
+
+```bash
+sudo apt remove hapy-translate
+```
+
+卸载不会删除 `~/.config/hapy-translate` 中的配置和登录数据。
+
+当前安装包面向 64 位 x86（amd64）Ubuntu / Debian。其他架构可以从源码运行。
+
 ### 从源码运行
 
 需要 Ubuntu 22.04+、`curl`（或 `wget`）和 `unzip`。项目不要求预装 Node.js。
@@ -106,7 +124,8 @@ Translate the above text enclosed with <translate_input> into French without
 | --- | --- |
 | 应用配置（语言、网站列表、预载设置、窗口位置） | `~/.config/hapy-translate/config.json` |
 | AI 网站登录状态与缓存 | `~/.config/hapy-translate/Partitions/hapy-ai/` |
-| 应用本体（安装后） | `~/.local/share/hapy-translate/` |
+| 应用本体（deb 安装） | `/opt/hapy-translate/` |
+| 应用本体（`install.sh` 用户安装） | `~/.local/share/hapy-translate/` |
 
 - 编辑框中的原文**不会写入磁盘**；关闭应用后即清除。
 - 所有 AI 页面都在启用上下文隔离的 `webview` 中运行，已关闭 Node.js 集成。
@@ -149,6 +168,7 @@ Translate the above text enclosed with <translate_input> into French without
 │   └── logos/            # 内置 AI 图标
 ├── scripts/
 │   ├── fetch-electron.sh # 下载便携 Electron 运行时
+│   ├── build-deb.sh      # 构建含运行时的 Ubuntu deb 安装包
 │   └── check.sh          # 本地 JS / Shell 语法检查
 ├── run.sh                # 本地启动
 ├── install.sh            # 安装到用户目录并创建桌面入口
@@ -174,6 +194,13 @@ Translate the above text enclosed with <translate_input> into French without
 ```
 
 脚本会检查 `main.js`、`preload.js`、`src/renderer.js` 的 JavaScript 语法和所有 Shell 脚本；未安装 Node.js 时会自动使用项目内置 Electron 的 Node 模式。
+
+构建安装包：
+
+```bash
+./scripts/fetch-electron.sh   # 首次构建
+./scripts/build-deb.sh        # 输出 dist/hapy-translate_1.0.0_amd64.deb
+```
 
 欢迎提交 Issue 和 PR，请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。安全问题请按 [SECURITY.md](SECURITY.md) 私密报告。
 
